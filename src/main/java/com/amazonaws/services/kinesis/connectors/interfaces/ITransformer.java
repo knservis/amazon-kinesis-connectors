@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Amazon Software License (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,26 +24,19 @@ import com.amazonaws.services.kinesis.model.Record;
  * emitter.
  * 
  * @param <T>
- *            the data type stored in the record
+ *        the data type stored in the record
+ * @param <U>
+ *        the data type to emit
  */
-public interface ITransformer<T, U> {
+public interface ITransformer<T, U> extends ITransformerBase<T, U> {
     /**
      * Transform record into an object of its original class.
      * 
      * @param record
-     *            raw record from the Kinesis stream
+     *        raw record from the Amazon Kinesis stream
      * @return data as its original class
      * @throws IOException
-     *             could not convert the record to a T
+     *         could not convert the record to a T
      */
     public T toClass(Record record) throws IOException;
-
-    /**
-     * Transform record from its original class to byte array.
-     * 
-     * @param record
-     *            data as its original class
-     * @return data byte array
-     */
-    public U fromClass(T record) throws IOException;
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Amazon Software License (the "License").
  * You may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ import com.amazonaws.services.kinesis.connectors.interfaces.ITransformer;
 import com.amazonaws.services.kinesis.connectors.s3.S3Emitter;
 
 /**
- * The Pipeline used by the S3 sample. Processes KinesisMessageModel records in JSON String
+ * The Pipeline used by the Amazon S3 sample. Processes KinesisMessageModel records in JSON String
  * format. Uses:
  * <ul>
  * <li>S3Emitter</li>
